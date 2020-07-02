@@ -62,6 +62,7 @@
                     <navigationItem key="navigationItem" id="RUE-cN-1Go"/>
                     <connections>
                         <outlet property="tableView" destination="2bp-GV-vhH" id="G0q-Ku-k1n"/>
+                        <segue destination="EC0-nZ-HYJ" kind="show" identifier="openMap" id="AFe-hS-vt1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UxQ-Vc-rXk" sceneMemberID="firstResponder"/>
@@ -85,6 +86,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6RS-1f-96G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="I53-jv-kVM">
+            <objects>
+                <viewController id="EC0-nZ-HYJ" customClass="MapViewController" customModule="CitySearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wkh-pB-XAk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rUD-LQ-qaD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rUD-LQ-qaD" firstAttribute="leading" secondItem="LuH-iY-4U8" secondAttribute="leading" id="2Wq-43-Wou"/>
+                            <constraint firstItem="LuH-iY-4U8" firstAttribute="trailing" secondItem="rUD-LQ-qaD" secondAttribute="trailing" id="oUF-hE-oVp"/>
+                            <constraint firstItem="LuH-iY-4U8" firstAttribute="bottom" secondItem="rUD-LQ-qaD" secondAttribute="bottom" id="wj0-bm-clK"/>
+                            <constraint firstItem="rUD-LQ-qaD" firstAttribute="top" secondItem="LuH-iY-4U8" secondAttribute="top" id="xIy-QP-g6k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LuH-iY-4U8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PmA-UU-GwH"/>
+                    <connections>
+                        <outlet property="mapView" destination="rUD-LQ-qaD" id="HNO-YY-4cN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wdt-fN-txV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1946" y="138"/>
         </scene>
     </scenes>
 </document>

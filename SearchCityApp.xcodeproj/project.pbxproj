@@ -20,6 +20,7 @@
 		030B37D724AE707D00355420 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 030B37CF24AE5A5100355420 /* cities.json */; };
 		030F213D24AE71B6003F6109 /* CityListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F213C24AE71B6003F6109 /* CityListViewModel.swift */; };
 		030F213F24AE7293003F6109 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F213E24AE7293003F6109 /* CityTableViewCell.swift */; };
+		030F214124AEA9FD003F6109 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F214024AEA9FD003F6109 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		030B37D524AE5BAB00355420 /* CitySearchEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchEngineTests.swift; sourceTree = "<group>"; };
 		030F213C24AE71B6003F6109 /* CityListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewModel.swift; sourceTree = "<group>"; };
 		030F213E24AE7293003F6109 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		030F214024AEA9FD003F6109 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				030B37AD24AE55FC00355420 /* AppDelegate.swift */,
 				030B37AF24AE55FC00355420 /* SceneDelegate.swift */,
 				030B37B124AE55FC00355420 /* ViewController.swift */,
+				030F214024AEA9FD003F6109 /* MapViewController.swift */,
 				030F213E24AE7293003F6109 /* CityTableViewCell.swift */,
 				030F213C24AE71B6003F6109 /* CityListViewModel.swift */,
 				030B37B324AE55FC00355420 /* Main.storyboard */,
@@ -225,6 +228,7 @@
 				030F213D24AE71B6003F6109 /* CityListViewModel.swift in Sources */,
 				030B37D224AE5AE100355420 /* City.swift in Sources */,
 				030B37B024AE55FC00355420 /* SceneDelegate.swift in Sources */,
+				030F214124AEA9FD003F6109 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
