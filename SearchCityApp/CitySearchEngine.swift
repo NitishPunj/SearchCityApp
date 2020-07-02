@@ -21,13 +21,13 @@ final class CitySearchEngine {
     let text = text.lowercased()
 
         var left = 0
-        var right = self.cities.count - 1
+        var right = cities.count - 1
 
         var results = [City]()
 
         while left <= right {
           let middle = Int(floor(Double(left + right) / 2.0))
-          let city = self.cities[middle]
+          let city = cities[middle]
           let name = city.name.lowercased()
 
           if name.hasPrefix(text) {
@@ -38,10 +38,10 @@ final class CitySearchEngine {
             // As the results are sorted, we can ssafely assume the matching prefixed cities are either on the right side of the current match or on the left side.
 
             // Start checking on the left side
-            results.append(contentsOf: self.search(from: middle-1, to: 0, text: text))
+            results.append(contentsOf: search(from: middle-1, to: 0, text: text))
 
             // Start checking on the right side
-            results.append(contentsOf: self.search(from: middle+1, to: self.cities.count, text: text))
+            results.append(contentsOf: search(from: middle+1, to: cities.count, text: text))
 
             break
 
@@ -63,10 +63,12 @@ final class CitySearchEngine {
         var results = [City]()
         let strideBy = (startIndex > endIndex) ? -1 : 1
         for i in stride(from: startIndex, to: endIndex, by: strideBy) {
-          let city = self.cities[i]
+          let city = cities[i]
           if city.name.lowercased().hasPrefix(text.lowercased()) {
             results.append(city)
-          }
+          } else {
+            break
+            }
         }
         return results
       }
