@@ -21,7 +21,11 @@ class ViewController: UIViewController {
       override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.reuseId)
+        viewModel.load {
+          DispatchQueue.main.async {
+            self.tableView.reloadData()
+          }
+        }
       }
     }
 
