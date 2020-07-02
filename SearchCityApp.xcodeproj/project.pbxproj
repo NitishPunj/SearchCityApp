@@ -14,6 +14,10 @@
 		030B37B724AE560100355420 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 030B37B624AE560100355420 /* Assets.xcassets */; };
 		030B37BA24AE560100355420 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 030B37B824AE560100355420 /* LaunchScreen.storyboard */; };
 		030B37C524AE560100355420 /* SearchCityAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B37C424AE560100355420 /* SearchCityAppTests.swift */; };
+		030B37D024AE5A5100355420 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 030B37CF24AE5A5100355420 /* cities.json */; };
+		030B37D224AE5AE100355420 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B37D124AE5AE100355420 /* City.swift */; };
+		030B37D424AE5B3000355420 /* CitySearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B37D324AE5B3000355420 /* CitySearchEngine.swift */; };
+		030B37D624AE5BAB00355420 /* CitySearchEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B37D524AE5BAB00355420 /* CitySearchEngineTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		030B37C024AE560100355420 /* SearchCityAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SearchCityAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		030B37C424AE560100355420 /* SearchCityAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityAppTests.swift; sourceTree = "<group>"; };
 		030B37C624AE560100355420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		030B37CF24AE5A5100355420 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		030B37D124AE5AE100355420 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		030B37D324AE5B3000355420 /* CitySearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchEngine.swift; sourceTree = "<group>"; };
+		030B37D524AE5BAB00355420 /* CitySearchEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchEngineTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +91,12 @@
 				030B37AF24AE55FC00355420 /* SceneDelegate.swift */,
 				030B37B124AE55FC00355420 /* ViewController.swift */,
 				030B37B324AE55FC00355420 /* Main.storyboard */,
+				030B37D124AE5AE100355420 /* City.swift */,
+				030B37D324AE5B3000355420 /* CitySearchEngine.swift */,
 				030B37B624AE560100355420 /* Assets.xcassets */,
 				030B37B824AE560100355420 /* LaunchScreen.storyboard */,
 				030B37BB24AE560100355420 /* Info.plist */,
+				030B37CF24AE5A5100355420 /* cities.json */,
 			);
 			path = SearchCityApp;
 			sourceTree = "<group>";
@@ -94,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				030B37C424AE560100355420 /* SearchCityAppTests.swift */,
+				030B37D524AE5BAB00355420 /* CitySearchEngineTests.swift */,
 				030B37C624AE560100355420 /* Info.plist */,
 			);
 			path = SearchCityAppTests;
@@ -180,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				030B37D024AE5A5100355420 /* cities.json in Resources */,
 				030B37BA24AE560100355420 /* LaunchScreen.storyboard in Resources */,
 				030B37B724AE560100355420 /* Assets.xcassets in Resources */,
 				030B37B524AE55FC00355420 /* Main.storyboard in Resources */,
@@ -202,6 +215,8 @@
 			files = (
 				030B37B224AE55FC00355420 /* ViewController.swift in Sources */,
 				030B37AE24AE55FC00355420 /* AppDelegate.swift in Sources */,
+				030B37D424AE5B3000355420 /* CitySearchEngine.swift in Sources */,
+				030B37D224AE5AE100355420 /* City.swift in Sources */,
 				030B37B024AE55FC00355420 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				030B37D624AE5BAB00355420 /* CitySearchEngineTests.swift in Sources */,
 				030B37C524AE560100355420 /* SearchCityAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
