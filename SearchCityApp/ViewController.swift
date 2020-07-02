@@ -9,39 +9,48 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-      private struct Constants {
+    
+    private struct Constants {
         static let reuseId = "cityCell"
-      }
-
-      @IBOutlet weak var tableView: UITableView!
-
-      let viewModel = CityListViewModel()
-
-      override func viewDidLoad() {
-        super.viewDidLoad()
-
-        viewModel.load {
-          DispatchQueue.main.async {
-            self.tableView.reloadData()
-          }
-        }
-      }
     }
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    let viewModel = CityListViewModel()
+    private let searchController = UISearchController(searchResultsController: nil)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search a City"
+        definesPresentationContext = true
+        navigationItem.searchController = searchController
+    }
+}
 
-    extension ViewController: UITableViewDataSource {
+extension ViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        viewModel.search(searchController.searchBar.text)
+        tableView.reloadData()
+    }
+}
 
-      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension ViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.viewModels.count
-      }
-
-      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.reuseId, for: indexPath) as? CityTableViewCell else {
-          fatalError()
+            fatalError()
         }
         cell.set(viewModel: viewModel.viewModels[indexPath.row])
         return cell
-      }
     }
+}
+
 
 

@@ -12,21 +12,29 @@ final class CityListViewModel {
     
     private(set) var viewModels: [CityViewModel]
     
-    init(viewModels: [CityViewModel] = []) {
-        self.viewModels = []
+   private let searchEngine: CitySearchEngine
+    private var cities: [City]
+
+    init() {
+      guard let path = Bundle.main.path(forResource: "cities", ofType: "json"),
+        let string = try? String.init(contentsOfFile: path),
+        let data = string.data(using: .utf8),
+        let cities = try? JSONDecoder().decode([City].self, from: data) else {
+          fatalError("Failed to load cities.json")
+      }
+      self.cities = cities.sorted(by: { $0.name.lowercased() < $1.name.lowercased() })
+      self.viewModels = self.cities.map(CityViewModel.init)
+      self.searchEngine = CitySearchEngine(cities: self.cities)
     }
     
-    func load(_ completion: @escaping () -> Void) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            guard let path = Bundle.main.path(forResource: "cities", ofType: "json"),
-                let string = try? String.init(contentsOfFile: path),
-                let data = string.data(using: .utf8),
-                let cities = try? JSONDecoder().decode([City].self, from: data) else {
-                    return completion()
-            }
-            self.viewModels = cities.map(CityViewModel.init)
-            completion()
-        }
+    func search(_ text: String?) {
+      guard let text = text, text.count > 0 else {
+        viewModels = cities.map(CityViewModel.init)
+        return
+      }
+      viewModels = searchEngine.search(text)
+        .sorted(by: { $0.name.lowercased() < $1.name.lowercased() })
+        .map(CityViewModel.init)
     }
 }
 
