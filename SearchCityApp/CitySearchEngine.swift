@@ -17,7 +17,9 @@ final class CitySearchEngine {
         self.cities = cities.sorted(by: { $0.name.lowercased() < $1.name.lowercased() })
   }
 
-  func search(_ text: String) -> [City] {
-    return []
+ func search(_ text: String) -> [City] {
+    self.cities.filter {
+      $0.name.lowercased().hasPrefix(text.lowercased())
+    }
   }
 }
