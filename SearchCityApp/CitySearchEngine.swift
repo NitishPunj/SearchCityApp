@@ -18,8 +18,56 @@ final class CitySearchEngine {
   }
 
  func search(_ text: String) -> [City] {
-    self.cities.filter {
-      $0.name.lowercased().hasPrefix(text.lowercased())
+    let text = text.lowercased()
+
+        var left = 0
+        var right = self.cities.count - 1
+
+        var results = [City]()
+
+        while left <= right {
+          let middle = Int(floor(Double(left + right) / 2.0))
+          let city = self.cities[middle]
+          let name = city.name.lowercased()
+
+          if name.hasPrefix(text) {
+
+            // We have our first result
+            results.append(city)
+
+            // As the results are sorted, we can ssafely assume the matching prefixed cities are either on the right side of the current match or on the left side.
+
+            // Start checking on the left side
+            results.append(contentsOf: self.search(from: middle-1, to: 0, text: text))
+
+            // Start checking on the right side
+            results.append(contentsOf: self.search(from: middle+1, to: self.cities.count, text: text))
+
+            break
+
+          } else if text > name {
+            // Search text falls on the right side
+            left = middle + 1
+          } else {
+            // Search text falls on the left side
+            right = middle - 1
+          }
+        }
+
+        return results
+      }
+
+      private func search(from startIndex: Int, to endIndex: Int, text: String) -> [City] {
+        guard startIndex >= 0, endIndex <= self.cities.count else { return [] }
+
+        var results = [City]()
+        let strideBy = (startIndex > endIndex) ? -1 : 1
+        for i in stride(from: startIndex, to: endIndex, by: strideBy) {
+          let city = self.cities[i]
+          if city.name.lowercased().hasPrefix(text.lowercased()) {
+            results.append(city)
+          }
+        }
+        return results
+      }
     }
-  }
-}
