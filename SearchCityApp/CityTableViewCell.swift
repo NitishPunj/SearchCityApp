@@ -9,9 +9,9 @@
 import UIKit
 
 final class CityTableViewCell: UITableViewCell {
-
-  func set(viewModel: CityViewModel) {
-    textLabel?.text = viewModel.title
-    detailTextLabel?.text = viewModel.coordinates
-  }
+    
+    func set(viewModel: CityViewModel) {
+        textLabel?.text = viewModel.title
+        detailTextLabel?.text = viewModel.coordinates
+    }
 }

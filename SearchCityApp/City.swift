@@ -9,13 +9,14 @@
 import Foundation
 
 struct Coordinates: Decodable {
-  let lon: Double
-  let lat: Double
+    let lon: Double
+    let lat: Double
 }
 
 struct City: Decodable {
-  let country: String
-  let name: String
-  let _id: Int
-  let coord: Coordinates
+    let country: String
+    let name: String
+    let _id: Int
+    let coord: Coordinates
 }
+

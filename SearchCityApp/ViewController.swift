@@ -11,9 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     
     private enum Segues: String {
-       case openMap
-     }
-
+        case openMap
+    }
+    
     private struct Constants {
         static let reuseId = "cityCell"
     }
@@ -34,23 +34,23 @@ class ViewController: UIViewController {
 }
 
 extension ViewController {
-
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == Segues.openMap.rawValue,
-      let mapVC = segue.destination as? MapViewController,
-      let viewModel = sender as? CityViewModel {
-      mapVC.viewModel = viewModel
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.openMap.rawValue,
+            let mapVC = segue.destination as? MapViewController,
+            let viewModel = sender as? CityViewModel {
+            mapVC.viewModel = viewModel
+        }
     }
-  }
 }
 
 extension ViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-       viewModel.search(searchController.searchBar.text) {
-          DispatchQueue.main.async {
-            self.tableView.reloadData()
-          }
+        viewModel.search(searchController.searchBar.text) {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 }
@@ -71,10 +71,8 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: UITableViewDelegate {
-
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    self.performSegue(withIdentifier: Segues.openMap.rawValue, sender: viewModel.viewModels[indexPath.row])
-  }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: Segues.openMap.rawValue, sender: viewModel.viewModels[indexPath.row])
+    }
 }
-
-

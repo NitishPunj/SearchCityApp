@@ -40,19 +40,21 @@ final class CityListViewModel {
         }
     }
 }
+
+final class CityViewModel {
     
-    final class CityViewModel {
+    let city: City
+    
+    let title: String
+    let coordinates: String
+    
+    init(city: City) {
+        self.city = city
         
-        let city: City
-        
-        let title: String
-        let coordinates: String
-        
-        init(city: City) {
-            self.city = city
-            
-            self.title = city.name + ", " + city.country
-            self.coordinates = "\(city.coord.lat),\(city.coord.lon)"
-        }
+        self.title = city.name + ", " + city.country
+        self.coordinates = "\(city.coord.lat),\(city.coord.lon)"
+    }
 }
+
+
 

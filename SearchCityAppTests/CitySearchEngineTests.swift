@@ -53,13 +53,13 @@ class CitySearchEngineLargeDatasetTests: XCTestCase {
     }
     
     private func getVeryLargeSetOfCities() -> [City] {
-       let bundle = Bundle(for: type(of: self))
-       let path = bundle.path(forResource: "cities", ofType: "json")!
-       let string = try! String.init(contentsOfFile: path)
-       let data = string.data(using: .utf8)!
-       let cities = try! JSONDecoder().decode([City].self, from: data)
-       return cities
-     }
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: "cities", ofType: "json")!
+        let string = try! String.init(contentsOfFile: path)
+        let data = string.data(using: .utf8)!
+        let cities = try! JSONDecoder().decode([City].self, from: data)
+        return cities
+    }
     
     func test_WhenSearching_al_ThenReturns3019Result() {
         // given
@@ -113,3 +113,4 @@ class CitySearchEngineLargeDatasetTests: XCTestCase {
         XCTAssertEqual(results.count, 0)
     }
 }
+
