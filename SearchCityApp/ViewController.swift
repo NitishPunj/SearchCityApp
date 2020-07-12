@@ -73,6 +73,6 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: Segues.openMap.rawValue, sender: viewModel.viewModels[indexPath.row])
+        performSegue(withIdentifier: Segues.openMap.rawValue, sender: viewModel.viewModels[indexPath.row])
     }
 }

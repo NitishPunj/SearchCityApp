@@ -24,7 +24,7 @@ final class CitySearchEngine {
         var results = [City]()
         
         while left <= right {
-            let middle = Int(floor(Double(left + right) / 2.0))
+            let middle = (left + right) / 2
             let city = cities[middle]
             let name = city.name.lowercased()
             
@@ -56,7 +56,7 @@ final class CitySearchEngine {
     }
     
     private func search(from startIndex: Int, to endIndex: Int, text: String) -> [City] {
-        guard startIndex >= 0, endIndex <= self.cities.count else { return [] }
+        guard startIndex >= 0, endIndex <= cities.count else { return [] }
         
         var results = [City]()
         let strideBy = (startIndex > endIndex) ? -1 : 1

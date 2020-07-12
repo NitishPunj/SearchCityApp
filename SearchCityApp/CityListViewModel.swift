@@ -23,8 +23,8 @@ final class CityListViewModel {
                 fatalError("Failed to load cities.json")
         }
         self.cities = cities.sorted(by: { $0.name.lowercased() < $1.name.lowercased() })
-        self.viewModels = self.cities.map(CityViewModel.init)
-        self.searchEngine = CitySearchEngine(cities: self.cities)
+        viewModels = self.cities.map(CityViewModel.init)
+        searchEngine = CitySearchEngine(cities: self.cities)
     }
     
     func search(_ text: String?, completion: @escaping () -> Void) {
@@ -34,7 +34,9 @@ final class CityListViewModel {
                 return completion()
             }
             self.viewModels = self.searchEngine.search(text)
-                .sorted(by: { $0.name.lowercased() < $1.name.lowercased() })
+                .sorted(by: {
+                    return $0.name.lowercased() == $1.name.lowercased() ? $0.country.lowercased() < $1.country.lowercased() : $0.name.lowercased() < $1.name.lowercased()
+                })
                 .map(CityViewModel.init)
             completion()
         }

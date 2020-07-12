@@ -21,6 +21,7 @@
 		030F213D24AE71B6003F6109 /* CityListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F213C24AE71B6003F6109 /* CityListViewModel.swift */; };
 		030F213F24AE7293003F6109 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F213E24AE7293003F6109 /* CityTableViewCell.swift */; };
 		030F214124AEA9FD003F6109 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F214024AEA9FD003F6109 /* MapViewController.swift */; };
+		0315296B24BBBD6700915942 /* CityListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315296A24BBBD6700915942 /* CityListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		030F213C24AE71B6003F6109 /* CityListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewModel.swift; sourceTree = "<group>"; };
 		030F213E24AE7293003F6109 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		030F214024AEA9FD003F6109 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		0315296A24BBBD6700915942 /* CityListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				030B37D524AE5BAB00355420 /* CitySearchEngineTests.swift */,
+				0315296A24BBBD6700915942 /* CityListViewModelTests.swift */,
 				030B37C624AE560100355420 /* Info.plist */,
 			);
 			path = SearchCityAppTests;
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				030B37D624AE5BAB00355420 /* CitySearchEngineTests.swift in Sources */,
+				0315296B24BBBD6700915942 /* CityListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
